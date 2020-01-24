@@ -6,6 +6,7 @@ import store from './store/store';
 // Importacion de firebase **********************//
 var firebase = require('firebase/app');
 require('firebase/auth');
+require('firebase/firestore');
 
 var firebaseConfig = {
 	apiKey: 'AIzaSyBrrY2vjKJpPgx_p00NZYz8D92N6YrpBVE',
@@ -16,8 +17,11 @@ var firebaseConfig = {
 	messagingSenderId: '546102954133',
 	appId: '1:546102954133:web:6f2dfa9982ab48c464b39c'
 };
+
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+export default firebaseApp.firestore();
 
 //***********************************************//
 

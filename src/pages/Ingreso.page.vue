@@ -2,9 +2,13 @@
   <div>
     <h1>Ingreso de usuarios</h1>
     <form @submit.prevent="ingresoUsuario({email, password})">
-      <input type="text" v-model="email" />
-      <input type="password" v-model="password" />
-      <button type="submit">Acceder</button>
+      <div class="form-group">
+        <input type="text" class="form-control" v-model="email" />
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" v-model="password" />
+      </div>
+      <button type="submit" class="btn btn-success">Acceder</button>
     </form>
     {{error}}
   </div>

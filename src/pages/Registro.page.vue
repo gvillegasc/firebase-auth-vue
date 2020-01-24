@@ -2,10 +2,16 @@
   <div>
     <h1>Registro de usuarios</h1>
     <form @submit.prevent="crearUsuario({email:email, password:password1})">
-      <input type="email" v-model="email" />
-      <input type="password" v-model="password1" />
-      <input type="password" v-model="password2" />
-      <button type="submit" :disabled="!desactivar">Crear Usuario</button>
+      <div class="form-group">
+        <input class="form-control" type="email" v-model="email" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" v-model="password1" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" v-model="password2" />
+      </div>
+      <button class="btn btn-success" type="submit" :disabled="!desactivar">Crear Usuario</button>
     </form>
     <p>{{error}}</p>
   </div>
