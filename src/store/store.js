@@ -135,7 +135,8 @@ export default new Vuex.Store({
 		},
 		// Eliminar tarea
 		eliminarTarea({ commit, dispatch }, id) {
-			db.collection('tareas')
+			const usuario = firebase.auth().currentUser;
+			db.collection(usuario.email)
 				.doc(id)
 				.delete()
 				.then(() => {
